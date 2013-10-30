@@ -1,16 +1,17 @@
 // --------------------------------------------------
 // Custom mixins: begin
 // --------------------------------------------------
-.font-face(@font-path: '../../../fonts/family-name', @file-name: arial-regular, @weight: normal, @style: normal) {
+.font-face(@file-name: '../../../fonts/file-name-without-extension', @font-family: 'Ubuntu', @font-weight: normal, @font-style: normal, @local-name: '@{font-family}') {
     @font-face {
-        font-family: '@{file-name}';
-        src: url('@{font-path}/@{file-name}.eot');
-        src: url('@{font-path}/@{file-name}.eot?#iefix') format('embedded-opentype'),
-             url('@{font-path}/@{file-name}.woff') format('woff'),
-             url('@{font-path}/@{file-name}.ttf') format('truetype'),
-             url('@{font-path}/@{file-name}.svg#@{file-name}') format('svg');
-        font-weight: @weight;
-        font-style: @style;
+        font-family: '@{font-family}';
+        src: url('@{file-name}.eot');
+        src: url('@{file-name}.eot?#iefix') format('embedded-opentype'),
+             url('@{file-name}.woff') format('woff'),
+             url('@{file-name}.ttf') format('truetype'),
+             url('@{file-name}.svg#@{font-family}@{font-weight}@{font-style}') format('svg');
+        src: local('@{local-name}');
+        font-weight: @font-weight;
+        font-style: @font-style;
     }
 }
 // --------------------------------------------------
