@@ -1,7 +1,11 @@
 // --------------------------------------------------
 // Custom mixins: begin
 // --------------------------------------------------
-.font-face(@file-name: '../../../fonts/file-name-without-extension', @font-family: 'Ubuntu', @font-weight: normal, @font-style: normal, @local-name: '@{font-family}') {
+
+// .font-face('.../fonts/ubuntu/ubuntu-regular', 'Ubuntu', normal, normal, 'Ubuntu Regular');
+// .font-face('.../fonts/ubuntu/ubuntu-bold', 'Ubuntu', bold, normal, 'Ubuntu Bold');
+// .font-face('.../fonts/ubuntu/ubuntu-italic', 'Ubuntu', normal, italic, 'Ubuntu Italic');
+.font-face(@file-name: '../../../fonts/file-name-without-extension', @font-family: 'Ubuntu', @font-weight, @font-style, @local-name) {
     @font-face {
         font-family: '@{font-family}';
         src: url('@{file-name}.eot');
@@ -14,6 +18,22 @@
         font-style: @font-style;
     }
 }
+
+// .font-face('.../fonts/romanesco/romanesco-regular', 'Romanesco', normal, normal);
+// .font-face('.../fonts/romul/romul-regular', 'Romul', normal, normal);
+.font-face(@file-name: '../../../fonts/file-name-without-extension', @font-family: 'Romul', @font-weight, @font-style) {
+    @font-face {
+        font-family: '@{font-family}';
+        src: url('@{file-name}.eot');
+        src: url('@{file-name}.eot?#iefix') format('embedded-opentype'),
+             url('@{file-name}.woff') format('woff'),
+             url('@{file-name}.ttf') format('truetype'),
+             url('@{file-name}.svg#@{font-family}@{font-weight}@{font-style}') format('svg');
+        font-weight: @font-weight;
+        font-style: @font-style;
+    }
+}
+
 // --------------------------------------------------
 // Custom mixins: end
 // --------------------------------------------------
